@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAU Semiconductor Metrology & Advanced Manufacturing Lab</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config for NAU Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nau: {
+                            blue: '#003466',
+                            gold: '#FFD200',
+                            goldHover: '#E5BD00',
+                            dark: '#002040',
+                            gray: '#f3f4f6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Utilities */
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(rgba(0, 52, 102, 0.85), rgba(0, 52, 102, 0.6));
+        }
+
+        /* Card Hover Effects */
+        .capability-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-white">
+
+    <!-- Navigation -->
+    <nav class="bg-nau-blue text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo Area -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- Placeholder SVG for Logo -->
+                    <div class="font-heading font-bold text-2xl tracking-tight flex flex-col md:flex-row md:items-center gap-1">
+                        <span class="text-nau-gold text-3xl">NAU</span>
+                        <span class="text-sm md:text-lg border-l border-nau-gold pl-2 md:pl-3 ml-1 leading-tight">Semiconductor Metrology<br class="hidden md:block"> & Manufacturing Lab</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center font-heading font-medium">
+                    <a href="#about" class="hover:text-nau-gold transition-colors">About</a>
+                    <a href="#capabilities" class="hover:text-nau-gold transition-colors">Capabilities</a>
+                    <a href="#education" class="hover:text-nau-gold transition-colors">Education</a>
+                    <a href="#industry" class="hover:text-nau-gold transition-colors">Industry</a>
+                    <a href="#contact" class="bg-nau-gold text-nau-blue px-5 py-2 rounded-md font-bold hover:bg-nau-goldHover transition-colors shadow-sm">
+                        Book Equipment
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-nau-gold focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-nau-dark border-t border-blue-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-heading">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-nau-blue hover:text-nau-gold">About</a>
+                <a href="#capabilities" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-nau-blue hover:text-nau-gold">Capabilities</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-nau-blue hover:text-nau-gold">Education</a>
+                <a href="#industry" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-nau-blue hover:text-nau-gold">Industry</a>
+                <a href="#contact" class="block w-full text-left px-3 py-2 rounded-md text-base font-bold text-nau-gold hover:bg-nau-blue">Book Equipment</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                 alt="Semiconductor Lab Student" 
+                 class="w-full h-full object-cover">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left w-full">
+            <div class="md:w-2/3">
+                <p class="text-nau-gold font-bold tracking-widest uppercase mb-4 text-sm md:text-base">Precision that Powers Innovation</p>
+                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                    Semiconductor Metrology & Advanced Manufacturing Lab
+                </h1>
+                <p class="text-gray-200 text-lg md:text-xl mb-8 max-w-2xl leading-relaxed">
+                    Bridging the gap between academic theory and industry reality. We provide hands-on education, workforce development, and applied research to fuel Arizona’s semiconductor sector.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#education" class="bg-nau-gold text-nau-blue font-bold py-3 px-8 rounded shadow-lg hover:bg-white hover:text-nau-blue transition-all transform hover:-translate-y-1 text-center">
+                        Explore Programs
+                    </a>
+                    <a href="#contact" class="border-2 border-white text-white font-bold py-3 px-8 rounded hover:bg-white hover:text-nau-blue transition-all text-center">
+                        Schedule a Tour
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-nau-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div>
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold text-nau-blue mb-6">Powering Arizona’s High-Tech Future</h2>
+                    <div class="w-16 h-1 bg-nau-gold mb-6"></div>
+                    <p class="text-gray-700 mb-4 leading-relaxed text-lg">
+                        The NAU Semiconductor Metrology Lab is designed to be the launchpad for the next generation of process technicians and engineers. We go beyond textbook theory, providing students access to industrial-grade optical, laser, pressure, temperature, and nanoscale characterization tools.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Our mission is direct: prepare students with the hands-on skills necessary to thrive immediately in Arizona’s rapidly expanding semiconductor manufacturing workforce. From cleanroom protocols to defect analysis, our students learn by doing.
+                    </p>
+                </div>
+                <!-- Image -->
+                <div class="relative rounded-lg overflow-hidden shadow-2xl h-80 md:h-auto">
+                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Students working with equipment" 
+                         class="absolute inset-0 w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Capabilities -->
+    <section id="capabilities" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-nau-blue mb-4">Advanced Characterization & Metrology</h2>
+                <div class="w-20 h-1 bg-nau-gold mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">State-of-the-art equipment available for student training, academic research, and industry collaboration.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Capability 1 -->
+                <div class="capability-card bg-white p-8 rounded-xl border border-gray-100 shadow-md text-center group">
+                    <div class="w-16 h-16 bg-blue-50 text-nau-blue rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-nau-blue group-hover:text-nau-gold transition-colors">
+                        <i class="fas fa-microscope text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-gray-900 mb-3">Digital Microscopy</h3>
+                    <p class="text-gray-600">High-resolution imaging for defect inspection combined with rapid elemental identification capabilities.</p>
+                </div>
+
+                <!-- Capability 2 -->
+                <div class="capability-card bg-white p-8 rounded-xl border border-gray-100 shadow-md text-center group">
+                    <div class="w-16 h-16 bg-blue-50 text-nau-blue rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-nau-blue group-hover:text-nau-gold transition-colors">
+                        <i class="fas fa-wave-square text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-gray-900 mb-3">Surface Profiling</h3>
+                    <p class="text-gray-600">Precise measurement of surface roughness, step heights, and film thickness down to the nanometer range.</p>
+                </div>
+
+                <!-- Capability 3 -->
+                <div class="capability-card bg-white p-8 rounded-xl border border-gray-100 shadow-md text-center group">
+                    <div class="w-16 h-16 bg-blue-50 text-nau-blue rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-nau-blue group-hover:text-nau-gold transition-colors">
+                        <i class="fas fa-atom text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-gray-900 mb-3">AFM Characterization</h3>
+                    <p class="text-gray-600">Atomic Force Microscopy for topographical imaging and material property mapping at the atomic level.</p>
+                </div>
+
+                <!-- Capability 4 -->
+                <div class="capability-card bg-white p-8 rounded-xl border border-gray-100 shadow-md text-center group">
+                    <div class="w-16 h-16 bg-blue-50 text-nau-blue rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-nau-blue group-hover:text-nau-gold transition-colors">
+                        <i class="fas fa-tachometer-alt text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-gray-900 mb-3">Pressure & Temp Calibration</h3>
+                    <p class="text-gray-600">Industry-standard systems for calibrating sensors critical to semiconductor process control environments.</p>
+                </div>
+
+                <!-- Capability 5 -->
+                <div class="capability-card bg-white p-8 rounded-xl border border-gray-100 shadow-md text-center group">
+                    <div class="w-16 h-16 bg-blue-50 text-nau-blue rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-nau-blue group-hover:text-nau-gold transition-colors">
+                        <i class="fas fa-user-graduate text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-gray-900 mb-3">Process Training</h3>
+                    <p class="text-gray-600">Hands-on instruction in fundamental fabrication steps, contamination control, and cleanroom protocols.</p>
+                </div>
+
+                <!-- Capability 6 -->
+                <div class="capability-card bg-white p-8 rounded-xl border border-gray-100 shadow-md text-center group">
+                    <div class="w-16 h-16 bg-blue-50 text-nau-blue rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-nau-blue group-hover:text-nau-gold transition-colors">
+                        <i class="fas fa-bullseye text-3xl"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-gray-900 mb-3">Optical & Laser Metrology</h3>
+                    <p class="text-gray-600">Non-destructive testing methods utilizing advanced laser interferometry and optical techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs and Courses -->
+    <section id="education" class="py-16 md:py-24 bg-nau-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-nau-blue mb-4">Integrated Education Paths</h2>
+                <div class="w-20 h-1 bg-nau-gold mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Path 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full border-t-4 border-nau-blue">
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-heading text-xl font-bold text-nau-blue mb-4">Technician Training</h3>
+                        <p class="text-gray-600 mb-4 text-sm uppercase tracking-wider font-semibold text-nau-gold">Workforce Ready</p>
+                        <p class="text-gray-700">Focused skill-building for immediate workforce entry. Covers equipment operation, safety protocols, and basic metrology for semiconductor technicians.</p>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <ul class="text-sm text-gray-600 mb-4 space-y-2">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Cleanroom Safety</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Equipment Operation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Path 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full border-t-4 border-nau-gold transform md:-translate-y-4 md:shadow-xl z-10">
+                    <div class="bg-nau-blue text-white py-2 text-center text-xs font-bold uppercase tracking-widest">Most Popular</div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-heading text-xl font-bold text-nau-blue mb-4">Undergraduate Labs</h3>
+                        <p class="text-gray-600 mb-4 text-sm uppercase tracking-wider font-semibold text-nau-gold">Physics & Engineering</p>
+                        <p class="text-gray-700">Integrating real-world lab experience into engineering and physics curricula. Students gain practical experience alongside theoretical learning.</p>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <ul class="text-sm text-gray-600 mb-4 space-y-2">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Applied Physics Labs</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Material Science</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Path 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full border-t-4 border-nau-blue">
+                    <div class="p-6 flex-grow">
+                        <h3 class="font-heading text-xl font-bold text-nau-blue mb-4">Graduate Research</h3>
+                        <p class="text-gray-600 mb-4 text-sm uppercase tracking-wider font-semibold text-nau-gold">Advanced Degrees</p>
+                        <p class="text-gray-700">Supporting Master’s and PhD students with sophisticated characterization tools needed for thesis research and novel material studies.</p>
+                    </div>
+                    <div class="px-6 pb-6">
+                        <ul class="text-sm text-gray-600 mb-4 space-y-2">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Thesis Support</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Novel Materials</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-nau-blue font-bold hover:text-nau-gold transition-colors">
+                    View All Related Courses at NAU <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry/Workshops Banner -->
+    <section id="industry" class="relative py-20 bg-nau-blue overflow-hidden">
+        <!-- Background Decor -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-blue-900 opacity-20"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-60 h-60 rounded-full bg-nau-gold opacity-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center md:text-left md:flex md:items-center md:justify-between">
+            <div class="md:w-2/3 mb-8 md:mb-0">
+                <h2 class="font-heading text-3xl font-bold text-white mb-4">Workforce Development & Industry Partnerships</h2>
+                <p class="text-blue-100 text-lg leading-relaxed">
+                    We are committed to supporting Arizona's tech ecosystem. The lab hosts regular upskilling workshops for current professionals and collaborates directly with industry partners on applied research.
+                </p>
+            </div>
+            <div class="md:w-1/3 flex justify-center md:justify-end">
+                <a href="#contact" class="bg-nau-gold text-nau-blue font-bold py-4 px-8 rounded shadow-lg hover:bg-white transition-colors text-lg">
+                    Partner With Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking / Access -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-heading text-3xl font-bold text-nau-blue mb-4">Accessing the Lab</h2>
+            <p class="text-gray-600 mb-10 text-lg">
+                The lab is available for use by NAU students enrolled in relevant courses, faculty researchers, and external industry partners (by appointment). Current students and staff can view equipment availability and reserve time slots directly.
+            </p>
+            
+            <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100 inline-block w-full max-w-lg mx-auto">
+                <i class="far fa-calendar-alt text-4xl text-nau-blue mb-4"></i>
+                <h3 class="text-xl font-bold text-nau-blue mb-2">Ready to work?</h3>
+                <p class="text-gray-600 mb-6">Schedule your time on the AFM, Optical Microscopes, or Calibration Stations.</p>
+                <button class="bg-nau-blue text-white font-bold py-3 px-8 rounded hover:bg-nau-gold hover:text-nau-blue transition-colors w-full sm:w-auto flex items-center justify-center mx-auto gap-2">
+                    <i class="fab fa-microsoft"></i> Book via Microsoft Bookings
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Success -->
+    <section class="py-16 bg-nau-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-heading text-3xl font-bold text-nau-blue mb-12 text-center">Student Outcomes</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Story 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm flex flex-col md:flex-row gap-6 items-center md:items-start">
+                    <div class="w-20 h-20 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Sarah J" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <i class="fas fa-quote-left text-nau-gold text-2xl mb-2 opacity-50"></i>
+                        <p class="text-gray-700 italic mb-4">"The hands-on experience with AFM and surface profiling gave me a massive advantage during interviews. I secured a process engineering role before graduation."</p>
+                        <p class="font-bold text-nau-blue">– Sarah J.</p>
+                        <p class="text-sm text-gray-500">Mechanical Engineering '24</p>
+                    </div>
+                </div>
+
+                <!-- Story 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm flex flex-col md:flex-row gap-6 items-center md:items-start">
+                    <div class="w-20 h-20 flex-shrink-0 bg-gray-200 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="David M" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <i class="fas fa-quote-left text-nau-gold text-2xl mb-2 opacity-50"></i>
+                        <p class="text-gray-700 italic mb-4">"Having access to industrial-grade calibration tools for my capstone project allowed our team to build a prototype that actually met industry standards."</p>
+                        <p class="font-bold text-nau-blue">– David M.</p>
+                        <p class="text-sm text-gray-500">Applied Physics '25</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-nau-blue text-white pt-16 pb-8 border-t-4 border-nau-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4 text-nau-gold">Contact Us</h4>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt w-6 text-center mr-2"></i>Engineering Building 69, Room 102</p>
+                    <p class="mb-2"><i class="fas fa-university w-6 text-center mr-2"></i>Northern Arizona University</p>
+                    <p class="mb-2"><i class="fas fa-envelope w-6 text-center mr-2"></i>semicon.lab@nau.edu</p>
+                    <p><i class="fas fa-phone w-6 text-center mr-2"></i>(928) 523-0000</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-lg mb-4 text-nau-gold">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-nau-gold transition-colors">College of Engineering</a></li>
+                        <li><a href="#" class="hover:text-nau-gold transition-colors">Department of Applied Physics</a></li>
+                        <li><a href="#" class="hover:text-nau-gold transition-colors">Campus Map</a></li>
+                        <li><a href="#" class="hover:text-nau-gold transition-colors">Lab Safety Protocols</a></li>
+                    </ul>
+                </div>
+
+                <!-- Branding -->
+                <div class="flex flex-col items-start md:items-end">
+                     <div class="font-heading font-bold text-3xl text-white mb-2">NAU</div>
+                     <p class="text-sm text-blue-200 text-left md:text-right">
+                         Northern Arizona University<br>
+                         Flagstaff, AZ 86011
+                     </p>
+                     <div class="mt-6 flex space-x-4">
+                         <a href="#" class="text-white hover:text-nau-gold"><i class="fab fa-facebook-f text-xl"></i></a>
+                         <a href="#" class="text-white hover:text-nau-gold"><i class="fab fa-twitter text-xl"></i></a>
+                         <a href="#" class="text-white hover:text-nau-gold"><i class="fab fa-linkedin-in text-xl"></i></a>
+                         <a href="#" class="text-white hover:text-nau-gold"><i class="fab fa-instagram text-xl"></i></a>
+                     </div>
+                </div>
+            </div>
+
+            <div class="border-t border-blue-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-blue-300">
+                <p>&copy; 2024 Northern Arizona University. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white">Accessibility</a>
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
