@@ -65,14 +65,14 @@
         }
 
         /* Modal Transitions */
-        #booking-modal {
+        #booking-modal, #details-modal {
             transition: opacity 0.3s ease-in-out;
         }
-        #booking-modal.hidden {
+        #booking-modal.hidden, #details-modal.hidden {
             display: none;
             opacity: 0;
         }
-        #booking-modal:not(.hidden) {
+        #booking-modal:not(.hidden), #details-modal:not(.hidden) {
             display: flex; 
             opacity: 1;
         }
@@ -503,8 +503,9 @@
                                     <p class="text-xs text-gray-500 font-bold mb-2">WITH EA 300 MODULE</p>
                                     <p class="text-sm text-nau-dark mb-4">4K Digital Microscope with elemental analysis capabilities. Ideal for defect inspection.</p>
                                 </div>
-                                <div class="mt-auto">
-                                    <button class="w-full bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
+                                <div class="mt-auto flex gap-2">
+                                    <button onclick="openDetails('keyence-7000')" class="flex-1 bg-gray-200 text-nau-blue py-2 px-4 rounded-sm hover:bg-gray-300 font-bold text-sm uppercase transition-colors">About</button>
+                                    <button class="flex-1 bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
                                 </div>
                             </div>
                         </div>
@@ -521,8 +522,9 @@
                                     <p class="text-xs text-gray-500 font-bold mb-2">3D SURFACE PROFILER</p>
                                     <p class="text-sm text-nau-dark mb-4">Laser scanning confocal microscope for non-contact 3D surface measurement.</p>
                                 </div>
-                                <div class="mt-auto">
-                                    <button class="w-full bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
+                                <div class="mt-auto flex gap-2">
+                                    <button onclick="openDetails('keyence-3000')" class="flex-1 bg-gray-200 text-nau-blue py-2 px-4 rounded-sm hover:bg-gray-300 font-bold text-sm uppercase transition-colors">About</button>
+                                    <button class="flex-1 bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
                                 </div>
                             </div>
                         </div>
@@ -539,8 +541,9 @@
                                     <p class="text-xs text-gray-500 font-bold mb-2">ATOMIC FORCE MICROSCOPE</p>
                                     <p class="text-sm text-nau-dark mb-4">Nanoscale topographical imaging and material property characterization.</p>
                                 </div>
-                                <div class="mt-auto">
-                                    <button class="w-full bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
+                                <div class="mt-auto flex gap-2">
+                                    <button onclick="openDetails('b2-afm')" class="flex-1 bg-gray-200 text-nau-blue py-2 px-4 rounded-sm hover:bg-gray-300 font-bold text-sm uppercase transition-colors">About</button>
+                                    <button class="flex-1 bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
                                 </div>
                             </div>
                         </div>
@@ -557,8 +560,9 @@
                                     <p class="text-xs text-gray-500 font-bold mb-2">TRANSMISSION ELECTRON MICROSCOPE</p>
                                     <p class="text-sm text-nau-dark mb-4">High-resolution transmission electron microscopy for internal structure analysis.</p>
                                 </div>
-                                <div class="mt-auto">
-                                    <button disabled class="w-full bg-gray-300 text-gray-500 py-2 px-4 rounded-sm font-bold text-sm uppercase cursor-not-allowed">Unavailable</button>
+                                <div class="mt-auto flex gap-2">
+                                    <button onclick="openDetails('jeol-tem')" class="flex-1 bg-gray-200 text-nau-blue py-2 px-4 rounded-sm hover:bg-gray-300 font-bold text-sm uppercase transition-colors">About</button>
+                                    <button disabled class="flex-1 bg-gray-300 text-gray-500 py-2 px-4 rounded-sm font-bold text-sm uppercase cursor-not-allowed">Unavailable</button>
                                 </div>
                             </div>
                         </div>
@@ -575,13 +579,14 @@
                                     <p class="text-xs text-gray-500 font-bold mb-2">RAPID PROTOTYPING</p>
                                     <p class="text-sm text-nau-dark mb-4">Precision milling machine for rapid in-house PCB prototyping and fabrication.</p>
                                 </div>
-                                <div class="mt-auto">
-                                    <button class="w-full bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
+                                <div class="mt-auto flex gap-2">
+                                    <button onclick="openDetails('lpkf-pcb')" class="flex-1 bg-gray-200 text-nau-blue py-2 px-4 rounded-sm hover:bg-gray-300 font-bold text-sm uppercase transition-colors">About</button>
+                                    <button class="flex-1 bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- NEW Item: Voltera V-One -->
+                        <!-- Item 6: Voltera V-One -->
                         <div class="equipment-item bg-white border border-gray-200 rounded-sm shadow-sm hover:shadow-md transition-all flex flex-col" data-category="prototyping">
                             <div class="item-image h-40 bg-gray-200 relative overflow-hidden flex-shrink-0">
                                 <img src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&w=600&q=80" alt="Voltera V-One" class="w-full h-full object-cover">
@@ -593,13 +598,14 @@
                                     <p class="text-xs text-gray-500 font-bold mb-2">PCB PRINTER</p>
                                     <p class="text-sm text-nau-dark mb-4">Desktop PCB printer for rapid prototyping of double-sided boards and solder paste dispensing.</p>
                                 </div>
-                                <div class="mt-auto">
-                                    <button class="w-full bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
+                                <div class="mt-auto flex gap-2">
+                                    <button onclick="openDetails('voltera')" class="flex-1 bg-gray-200 text-nau-blue py-2 px-4 rounded-sm hover:bg-gray-300 font-bold text-sm uppercase transition-colors">About</button>
+                                    <button class="flex-1 bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Item 6: Fluke Dead Weight -->
+                        <!-- Item 7: Fluke Dead Weight -->
                         <div class="equipment-item bg-white border border-gray-200 rounded-sm shadow-sm hover:shadow-md transition-all flex flex-col" data-category="calibration">
                             <div class="item-image h-40 bg-gray-200 relative overflow-hidden flex-shrink-0">
                                 <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80" alt="Fluke Dead Weight" class="w-full h-full object-cover">
@@ -611,13 +617,14 @@
                                     <p class="text-xs text-gray-500 font-bold mb-2">MODELS 3114 & 3025</p>
                                     <p class="text-sm text-nau-dark mb-4">Primary standards for high-precision pressure calibration (hydraulic & pneumatic).</p>
                                 </div>
-                                <div class="mt-auto">
-                                    <button class="w-full bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
+                                <div class="mt-auto flex gap-2">
+                                    <button onclick="openDetails('fluke')" class="flex-1 bg-gray-200 text-nau-blue py-2 px-4 rounded-sm hover:bg-gray-300 font-bold text-sm uppercase transition-colors">About</button>
+                                    <button class="flex-1 bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
                                 </div>
                             </div>
                         </div>
                         
-                         <!-- Item 7: Dry Wells -->
+                         <!-- Item 8: Dry Wells -->
                         <div class="equipment-item bg-white border border-gray-200 rounded-sm shadow-sm hover:shadow-md transition-all flex flex-col" data-category="calibration">
                             <div class="item-image h-40 bg-gray-200 relative overflow-hidden flex-shrink-0">
                                 <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80" alt="Metrology Dry Wells" class="w-full h-full object-cover">
@@ -629,13 +636,14 @@
                                     <p class="text-xs text-gray-500 font-bold mb-2">TEMPERATURE CALIBRATION</p>
                                     <p class="text-sm text-nau-dark mb-4">Field metrology wells for stable and accurate temperature sensor calibration.</p>
                                 </div>
-                                <div class="mt-auto">
-                                    <button class="w-full bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
+                                <div class="mt-auto flex gap-2">
+                                    <button onclick="openDetails('dry-wells')" class="flex-1 bg-gray-200 text-nau-blue py-2 px-4 rounded-sm hover:bg-gray-300 font-bold text-sm uppercase transition-colors">About</button>
+                                    <button class="flex-1 bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- NEW Item: Keithley DC Power Supply -->
+                        <!-- Item 9: Keithley DC Power Supply -->
                         <div class="equipment-item bg-white border border-gray-200 rounded-sm shadow-sm hover:shadow-md transition-all flex flex-col" data-category="electronics">
                             <div class="item-image h-40 bg-gray-200 relative overflow-hidden flex-shrink-0">
                                 <img src="https://images.unsplash.com/photo-1588508065123-287b9eddcf78?auto=format&fit=crop&w=600&q=80" alt="Keithley DC Power Supply" class="w-full h-full object-cover">
@@ -647,13 +655,14 @@
                                     <p class="text-xs text-gray-500 font-bold mb-2">TRIPLE CHANNEL DC SUPPLY</p>
                                     <p class="text-sm text-nau-dark mb-4">High-power, triple-channel programmable DC power supply for circuit testing.</p>
                                 </div>
-                                <div class="mt-auto">
-                                    <button class="w-full bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
+                                <div class="mt-auto flex gap-2">
+                                    <button onclick="openDetails('keithley')" class="flex-1 bg-gray-200 text-nau-blue py-2 px-4 rounded-sm hover:bg-gray-300 font-bold text-sm uppercase transition-colors">About</button>
+                                    <button class="flex-1 bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- NEW Item: AFG 1000 Function Generator -->
+                        <!-- Item 10: AFG 1000 Function Generator -->
                         <div class="equipment-item bg-white border border-gray-200 rounded-sm shadow-sm hover:shadow-md transition-all flex flex-col" data-category="electronics">
                             <div class="item-image h-40 bg-gray-200 relative overflow-hidden flex-shrink-0">
                                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="AFG 1000 Generator" class="w-full h-full object-cover">
@@ -665,13 +674,14 @@
                                     <p class="text-xs text-gray-500 font-bold mb-2">ARBITRARY/FUNCTION GENERATOR</p>
                                     <p class="text-sm text-nau-dark mb-4">Generates sine, square, pulse, ramp, and noise signals for electronics labs.</p>
                                 </div>
-                                <div class="mt-auto">
-                                    <button class="w-full bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
+                                <div class="mt-auto flex gap-2">
+                                    <button onclick="openDetails('afg-1000')" class="flex-1 bg-gray-200 text-nau-blue py-2 px-4 rounded-sm hover:bg-gray-300 font-bold text-sm uppercase transition-colors">About</button>
+                                    <button class="flex-1 bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
                                 </div>
                             </div>
                         </div>
 
-                         <!-- NEW Item: TBS 1000C Oscilloscope -->
+                         <!-- Item 11: TBS 1000C Oscilloscope -->
                         <div class="equipment-item bg-white border border-gray-200 rounded-sm shadow-sm hover:shadow-md transition-all flex flex-col" data-category="electronics">
                             <div class="item-image h-40 bg-gray-200 relative overflow-hidden flex-shrink-0">
                                 <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=600&q=80" alt="TBS 1000C Oscilloscope" class="w-full h-full object-cover">
@@ -683,8 +693,9 @@
                                     <p class="text-xs text-gray-500 font-bold mb-2">DIGITAL OSCILLOSCOPE</p>
                                     <p class="text-sm text-nau-dark mb-4">Affordable, compact digital storage oscilloscope for education and embedded design.</p>
                                 </div>
-                                <div class="mt-auto">
-                                    <button class="w-full bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
+                                <div class="mt-auto flex gap-2">
+                                    <button onclick="openDetails('tbs-1000')" class="flex-1 bg-gray-200 text-nau-blue py-2 px-4 rounded-sm hover:bg-gray-300 font-bold text-sm uppercase transition-colors">About</button>
+                                    <button class="flex-1 bg-nau-blue text-white py-2 px-4 rounded-sm hover:bg-nau-gold hover:text-nau-blue font-bold text-sm uppercase transition-colors">Book Now</button>
                                 </div>
                             </div>
                         </div>
@@ -697,6 +708,69 @@
                     <button type="button" onclick="toggleBookingModal()" class="w-full inline-flex justify-center rounded-sm border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-nau-blue focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm font-heading uppercase tracking-wide">
                         Close Catalog
                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EQUIPMENT DETAILS MODAL (NEW) -->
+    <div id="details-modal" class="hidden fixed inset-0 z-[70] overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-nau-blue bg-opacity-95 transition-opacity" onclick="closeDetails()"></div>
+
+        <!-- Modal Content -->
+        <div class="flex items-center justify-center min-h-screen p-4 text-center sm:p-0 w-full">
+            <div class="relative bg-white text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:max-w-4xl sm:w-full rounded-sm flex flex-col md:flex-row">
+                
+                <!-- Image Side -->
+                <div class="md:w-1/2 bg-gray-200 relative h-64 md:h-auto">
+                    <img id="detail-image" src="" alt="Equipment Detail" class="w-full h-full object-cover absolute inset-0">
+                </div>
+
+                <!-- Content Side -->
+                <div class="md:w-1/2 p-8 flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 id="detail-title" class="text-3xl font-extrabold text-nau-blue font-heading uppercase leading-none"></h3>
+                        <button onclick="closeDetails()" class="text-gray-400 hover:text-nau-gold"><i class="fas fa-times text-2xl"></i></button>
+                    </div>
+
+                    <div class="mb-6">
+                        <span id="detail-status" class="inline-block px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider mb-2"></span>
+                        <p id="detail-desc" class="text-nau-dark text-lg leading-relaxed"></p>
+                    </div>
+
+                    <div class="space-y-4 mb-8 bg-nau-offWhite p-6 rounded-sm border border-gray-200">
+                        <div class="flex items-center">
+                            <i class="fas fa-dollar-sign w-6 text-nau-gold text-lg"></i>
+                            <div>
+                                <span class="block text-xs text-gray-500 font-bold uppercase">Hourly Rate</span>
+                                <span id="detail-price" class="font-medium text-nau-blue"></span>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-user-circle w-6 text-nau-gold text-lg"></i>
+                            <div>
+                                <span class="block text-xs text-gray-500 font-bold uppercase">Person In-Charge</span>
+                                <span id="detail-incharge" class="font-medium text-nau-blue"></span>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt w-6 text-nau-gold text-lg"></i>
+                            <div>
+                                <span class="block text-xs text-gray-500 font-bold uppercase">Location</span>
+                                <span id="detail-location" class="font-medium text-nau-blue"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto flex gap-3">
+                        <a id="detail-link" href="#" target="_blank" class="flex-1 border-2 border-nau-blue text-nau-blue py-3 px-4 rounded-sm hover:bg-nau-blue hover:text-white font-bold text-center uppercase transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i> Specs
+                        </a>
+                        <button class="flex-1 bg-nau-gold text-nau-blue py-3 px-4 rounded-sm hover:bg-nau-goldHover font-bold uppercase transition-colors shadow-md">
+                            Book Now
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -750,12 +824,8 @@
             // Show/Hide Items
             items.forEach(item => {
                 const itemCats = item.dataset.category.split(' ');
-                // Check if item should be visible
                 if (category === 'all' || itemCats.includes(category)) {
                     item.classList.remove('hidden');
-                    // We need to re-apply 'flex' because 'hidden' overrides display. 
-                    // However, just removing 'hidden' reverts to the element's default or CSS-defined display.
-                    // The class list on the element has 'flex', so removing 'hidden' is enough.
                 } else {
                     item.classList.add('hidden');
                 }
@@ -768,56 +838,195 @@
             const items = document.querySelectorAll('.equipment-item');
             const itemImages = document.querySelectorAll('.item-image');
             
-            // Buttons
             const gridBtn = document.getElementById('grid-view-btn');
             const listBtn = document.getElementById('list-view-btn');
 
             if (view === 'list') {
-                // Update Container for List
                 container.classList.remove('grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-3', 'xl:grid-cols-4');
                 container.classList.add('grid-cols-1');
-
-                // Update Items for Horizontal Layout
                 items.forEach(item => {
                     item.classList.remove('flex-col');
                     item.classList.add('flex-row', 'items-center', 'min-h-[160px]');
                 });
-
-                // Update Images size
                 itemImages.forEach(img => {
                     img.classList.remove('h-40');
                     img.classList.add('w-48', 'h-full', 'min-h-[160px]');
                 });
-
-                // Button Styling
                 listBtn.classList.add('bg-white', 'shadow-sm', 'text-nau-blue');
                 listBtn.classList.remove('text-gray-500');
                 gridBtn.classList.remove('bg-white', 'shadow-sm', 'text-nau-blue');
                 gridBtn.classList.add('text-gray-500');
 
             } else {
-                // Revert to Grid
                 container.classList.remove('grid-cols-1');
                 container.classList.add('grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-3', 'xl:grid-cols-4');
-
-                // Update Items for Vertical Layout
                 items.forEach(item => {
                     item.classList.add('flex-col');
                     item.classList.remove('flex-row', 'items-center', 'min-h-[160px]');
                 });
-
-                // Update Images size
                 itemImages.forEach(img => {
                     img.classList.add('h-40');
                     img.classList.remove('w-48', 'h-full', 'min-h-[160px]');
                 });
-
-                 // Button Styling
                 gridBtn.classList.add('bg-white', 'shadow-sm', 'text-nau-blue');
                 gridBtn.classList.remove('text-gray-500');
                 listBtn.classList.remove('bg-white', 'shadow-sm', 'text-nau-blue');
                 listBtn.classList.add('text-gray-500');
             }
+        }
+
+        // --- NEW: EQUIPMENT DETAILS LOGIC ---
+
+        const equipmentDB = {
+            'keyence-7000': {
+                title: 'Keyence VHX 7000',
+                image: 'Keyence7000.avif',
+                status: 'Available',
+                statusColor: 'bg-green-100 text-green-800',
+                desc: 'The VHX-7000 Series is a 4K digital microscope that offers high magnification and accuracy. It features advanced elemental analysis capabilities, making it ideal for detailed defect inspection and material characterization.',
+                price: '$45/hr (Academic) | $120/hr (Industry)',
+                inCharge: 'Dr. Sarah Miller',
+                location: 'Building 69, Room 102A',
+                link: 'https://www.keyence.com/products/microscope/digital-microscope/vhx-7000/'
+            },
+            'keyence-3000': {
+                title: 'Keyence VKX 3000',
+                image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80',
+                status: 'Available',
+                statusColor: 'bg-green-100 text-green-800',
+                desc: '3D Laser Scanning Confocal Microscope. Provides non-contact, nanometer-level surface roughness and profile measurements.',
+                price: '$60/hr (Academic) | $150/hr (Industry)',
+                inCharge: 'Dr. Sarah Miller',
+                location: 'Building 69, Room 102A',
+                link: '#'
+            },
+            'b2-afm': {
+                title: 'B-2 AFM',
+                image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80',
+                status: 'Limited',
+                statusColor: 'bg-yellow-100 text-yellow-800',
+                desc: 'Atomic Force Microscope for high-resolution topographical imaging. Capable of contact and tapping modes for various material types.',
+                price: '$80/hr (Academic) | $200/hr (Industry)',
+                inCharge: 'Prof. James Chen',
+                location: 'Building 69, Cleanroom Bay 1',
+                link: '#'
+            },
+            'jeol-tem': {
+                title: 'JEOL TEM',
+                image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=600&q=80',
+                status: 'Maintenance',
+                statusColor: 'bg-red-100 text-red-800',
+                desc: 'Transmission Electron Microscope. Currently undergoing scheduled filament replacement and column alignment.',
+                price: 'Unavailable',
+                inCharge: 'Lab Manager',
+                location: 'Building 69, Basement Lab',
+                link: '#'
+            },
+            'lpkf-pcb': {
+                title: 'LPKF PCB Mill',
+                image: 'https://images.unsplash.com/photo-1622434641406-a158123450f9?auto=format&fit=crop&w=600&q=80',
+                status: 'Available',
+                statusColor: 'bg-green-100 text-green-800',
+                desc: 'Rapid PCB Prototyping machine. Mills copper clad boards for quick turnaround of circuit designs without chemical etching.',
+                price: '$20/hr (Academic) | $50/hr (Industry)',
+                inCharge: 'T.A. John Doe',
+                location: 'Building 69, Room 105',
+                link: '#'
+            },
+            'voltera': {
+                title: 'Voltera V-One',
+                image: 'https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&w=600&q=80',
+                status: 'Available',
+                statusColor: 'bg-green-100 text-green-800',
+                desc: 'Desktop PCB Printer. Dispenses conductive ink and solder paste, and includes a reflow heat bed for component assembly.',
+                price: '$15/hr (Academic) | $40/hr (Industry)',
+                inCharge: 'T.A. John Doe',
+                location: 'Building 69, Room 105',
+                link: '#'
+            },
+            'fluke': {
+                title: 'Fluke Dead Weight',
+                image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80',
+                status: 'Available',
+                statusColor: 'bg-green-100 text-green-800',
+                desc: 'Primary pressure standard. Uses calibrated weights to apply precise pressure for gauge calibration.',
+                price: '$30/hr (Academic) | $80/hr (Industry)',
+                inCharge: 'Metrology Staff',
+                location: 'Building 69, Room 104',
+                link: '#'
+            },
+            'dry-wells': {
+                title: 'Metrology Dry Wells',
+                image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=80',
+                status: 'Available',
+                statusColor: 'bg-green-100 text-green-800',
+                desc: 'High-stability temperature sources for calibrating thermocouples and RTDs.',
+                price: '$25/hr (Academic) | $60/hr (Industry)',
+                inCharge: 'Metrology Staff',
+                location: 'Building 69, Room 104',
+                link: '#'
+            },
+            'keithley': {
+                title: 'Keithley 2231A-30-3',
+                image: 'https://images.unsplash.com/photo-1588508065123-287b9eddcf78?auto=format&fit=crop&w=600&q=80',
+                status: 'Available',
+                statusColor: 'bg-green-100 text-green-800',
+                desc: 'Triple Channel DC Power Supply. Fully programmable for automated testing sequences.',
+                price: 'Free (Students) | $20/hr (Industry)',
+                inCharge: 'Open Lab',
+                location: 'Building 69, Room 106',
+                link: '#'
+            },
+            'afg-1000': {
+                title: 'AFG 1000 Series',
+                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
+                status: 'Available',
+                statusColor: 'bg-green-100 text-green-800',
+                desc: 'Arbitrary Function Generator. Essential for injecting signals into circuits for characterization.',
+                price: 'Free (Students) | $20/hr (Industry)',
+                inCharge: 'Open Lab',
+                location: 'Building 69, Room 106',
+                link: '#'
+            },
+            'tbs-1000': {
+                title: 'TBS 1000C Series',
+                image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=600&q=80',
+                status: 'Available',
+                statusColor: 'bg-green-100 text-green-800',
+                desc: 'Digital Storage Oscilloscope. 2-channel, 100 MHz bandwidth for general purpose electronics debugging.',
+                price: 'Free (Students) | $20/hr (Industry)',
+                inCharge: 'Open Lab',
+                location: 'Building 69, Room 106',
+                link: '#'
+            }
+        };
+
+        function openDetails(id) {
+            const data = equipmentDB[id];
+            if (!data) return;
+
+            // Populate Modal
+            document.getElementById('detail-image').src = data.image;
+            document.getElementById('detail-title').innerText = data.title;
+            
+            const statusBadge = document.getElementById('detail-status');
+            statusBadge.innerText = data.status;
+            statusBadge.className = `inline-block px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider mb-2 ${data.statusColor}`;
+
+            document.getElementById('detail-desc').innerText = data.desc;
+            document.getElementById('detail-price').innerText = data.price;
+            document.getElementById('detail-incharge').innerText = data.inCharge;
+            document.getElementById('detail-location').innerText = data.location;
+            document.getElementById('detail-link').href = data.link;
+
+            // Show Modal
+            const modal = document.getElementById('details-modal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeDetails() {
+            const modal = document.getElementById('details-modal');
+            modal.classList.add('hidden');
         }
     </script>
 </body>
